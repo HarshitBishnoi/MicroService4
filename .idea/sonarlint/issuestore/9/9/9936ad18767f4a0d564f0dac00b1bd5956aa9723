@@ -1,0 +1,17 @@
+
+fsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( Þ†ž
+ksquid:S00100$"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àâÝâúÿÿÿÿ
+fsquid:S00100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•çÆ¯
+ksquid:S001004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®Ç±æùÿÿÿÿ
+ksquid:S00100<"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú’“ƒøÿÿÿÿ
+fsquid:S00100D"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„¦‰Ã
+˜squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(»«ÔÂ
+psquid:S00116"SRename this field "order_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü­Ô’ùÿÿÿÿ
+xsquid:S00116"[Rename this field "date_of_purchase" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êõö÷úÿÿÿÿ
+rsquid:S00116"URename this field "payment_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰š§Ñýÿÿÿÿ
+nsquid:S001174"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®Ç±æùÿÿÿÿ
+nsquid:S00117<"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú’“ƒøÿÿÿÿ
+isquid:S00117D"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„¦‰Ã
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¥òÙñüÿÿÿÿ
+}squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(Å¡ñ€ùÿÿÿÿ
+}squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(‰û˜õùÿÿÿÿ
