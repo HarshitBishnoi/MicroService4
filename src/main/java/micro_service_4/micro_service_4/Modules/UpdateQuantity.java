@@ -3,14 +3,16 @@ package micro_service_4.micro_service_4.Modules;
 import java.util.List;
 
 public class UpdateQuantity {
-private Boolean toReduce;
- private List<IndividualProductQuantity> productIds;
+
+ private List<ProductDetails> productIds;
+ private Boolean toReduce;
 
 
     public UpdateQuantity() {
+
     }
 
-    public UpdateQuantity(Boolean toReduce, List<IndividualProductQuantity> productIds) {
+    public UpdateQuantity(List<ProductDetails> productIds,Boolean toReduce) {
         this.toReduce = toReduce;
         this.productIds = productIds;
     }
@@ -19,15 +21,15 @@ private Boolean toReduce;
         return toReduce;
     }
 
-    public List<IndividualProductQuantity> getProductIds() {
-        return productIds;
-    }
-
     public void setToReduce(Boolean toReduce) {
         this.toReduce = toReduce;
     }
 
-    public void setProductIds(List<IndividualProductQuantity> productIds) {
+    public List<ProductDetails> getProductIds() {
+        return productIds;
+    }
+
+    public void setProductIds(List<ProductDetails> productIds) {
         this.productIds = productIds;
     }
 }
