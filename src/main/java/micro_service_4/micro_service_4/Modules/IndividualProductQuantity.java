@@ -1,5 +1,7 @@
 package micro_service_4.micro_service_4.Modules;
 
+
+//NOT USED IN THE ENTIRE CODEBASE, KEPT FOR POTENTIAL USE
 public class IndividualProductQuantity {
     private String productIDs;
     private Integer quantity;

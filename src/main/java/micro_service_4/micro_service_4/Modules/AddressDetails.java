@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.util.UUID;
 
 @Entity
-@Table(name="addressdetails") // make table TODO
+@Table(name="addressdetails")
 public class AddressDetails {
     @Id
     @Column(name="addressid")
@@ -81,5 +81,10 @@ public class AddressDetails {
 
     public Integer getPinCode() {
         return pinCode;
+    }
+
+    @Override
+    public String toString() {
+        return this.getStreet() + "," + this.getPinCode() + "," + this.getCity();
     }
 }

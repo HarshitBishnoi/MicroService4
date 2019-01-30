@@ -1,13 +1,14 @@
 package micro_service_4.micro_service_4.Modules;
 
-import java.util.UUID;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductDetails {
 
 
     private String productId;
     private String productName;
-    private String brand;
+    private String category;
     private Integer price;
     private Integer quantity;
 
@@ -15,10 +16,16 @@ public class ProductDetails {
 
     }
 
-    public ProductDetails(String productId,String productName, String brand, Integer price, Integer quantity) {
+    public ProductDetails(String productId, Integer quantity) {
+        this.productId = productId;
+        this.quantity = quantity;
+    }
+
+
+    public ProductDetails(String productId, String productName, String category, Integer price, Integer quantity) {
         this.productId = productId;
         this.productName = productName;
-        this.brand = brand;
+        this.category = category;
         this.price = price;
         this.quantity = quantity;
     }
@@ -35,8 +42,8 @@ public class ProductDetails {
         this.productName = productName;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public void setPrice(Integer price) {
@@ -51,8 +58,8 @@ public class ProductDetails {
         return productName;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getCategory() {
+        return category;
     }
 
     public Integer getPrice() {
@@ -65,6 +72,6 @@ public class ProductDetails {
 
     @Override
     public String toString() {
-        return "[" + this.productId + "," + this.brand + "," + this.price + "," + this.quantity + "]";
+        return "[" + this.productId + "," + this.category + "," + this.price + "," + this.quantity + "]";
     }
 }

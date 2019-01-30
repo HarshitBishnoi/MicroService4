@@ -1,11 +1,14 @@
 package micro_service_4.micro_service_4.Service;
 
+import com.google.common.collect.Lists;
 import com.sun.jndi.toolkit.url.Uri;
 import micro_service_4.micro_service_4.Exceptions.OrderNotFoundException;
 import micro_service_4.micro_service_4.Modules.*;
+import micro_service_4.micro_service_4.Repository.OrderCartMapRepository;
 import micro_service_4.micro_service_4.Repository.OrderRepository;
 import micro_service_4.micro_service_4.Modules.OrderSummaryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -25,27 +28,19 @@ public class OrderService {
     @Autowired
     private AddressDetailsService addressDetailsService;
 
+    @Autowired
+    private OrderCartMapRepository orderCartMapRepository;
 
+
+    // make order summary when user checks out his/her cart
     public CartRequestResponse makeCartEntryToOrders(String cartId, List<ProductDetails> productDetails, AddressDetails address, Integer totalCost) {
-
-
-        String CATALOG_SERVICE_URL = "http://demo0655277.mockable.io/";
-
-        List<String> productIds = new ArrayList<>();
-        for(ProductDetails prod:productDetails)
-            productIds.add(prod.getProductId());
-
-        System.out.println("yha aaya");
-        System.out.println(productIds);
-//        RestTemplate restTemplate = new RestTemplate();
-//        System.out.println(restTemplate.postForLocation(CATALOG_SERVICE_URL, productIds, List.class));
-//        System.out.println(uri);
-
-//        if(true)
-//            return null;
 
         UUID orderId =  saveToOrderTable(null, address.getAddressId(), totalCost);
 
+        OrderCartMap orderCartMap = new OrderCartMap(orderId,cartId);
+        orderCartMapRepository.save(orderCartMap);
+
+        // add products to orderProductMap
         for (ProductDetails prod : productDetails) {
             orderProductMapService.saveToOrderProductMap(orderId, prod.getProductId(), prod.getProductName(), prod.getQuantity(), prod.getPrice());
         }
@@ -53,13 +48,26 @@ public class OrderService {
         return new CartRequestResponse(orderId);
     }
 
+    // confirm order by making multiple api calls to catalog and cart
     public OrderSummaryResponse confirmOrderPaymentRequest(UUID orderId, String paymentId, Date dateOfPurchase, String modeOfPayment, Boolean isSuccess) {
 
+        OrderCartMap orderCartMap = orderCartMapRepository.findById(orderId).get();
+
+
+        //empty cart when order is placed for cart items
+        if(orderCartMap.getCartId() != null) {
+            RestTemplate restTemplate = new RestTemplate();
+            final String emptyCartUri = "http://10.10.212.81:8080/cart/emptyCart";
+            restTemplate.delete(emptyCartUri);
+        }
+
+        //update table to confirm order
         this.confirmOrderPayment(orderId,dateOfPurchase,paymentId);
         return createResponseForOrderSummary(orderId);
     }
 
 
+    //creates order summary corresponding to order id, saves all data for the order
     public OrderSummaryResponse createResponseForOrderSummary(UUID orderId){
 
         Order order = orderRepository.findById(orderId)
@@ -75,13 +83,16 @@ public class OrderService {
         return response;
     }
 
-
+    //creates and responds with summary for all the orders in the database
     public List<OrderSummaryResponse> createResponseForAllOrderSummary(){
 
         Iterable<Order> allOrdersIterable = orderRepository.findAll();
         List<OrderSummaryResponse> response = new ArrayList<>();
 
-        for(Order order:allOrdersIterable){
+        List<Order> mlist = Lists.newArrayList(allOrdersIterable);
+        Collections.reverse(mlist);
+
+        for(Order order:mlist){
             response.add(createResponseForOrderSummary(order.getOrderId()));
         }
 
@@ -99,7 +110,6 @@ public class OrderService {
         return orderId;
 
     }
-
 
     private void addOrder(Order order) {
         orderRepository.save(order);
@@ -146,4 +156,21 @@ public class OrderService {
 
     }
 
+    //api for payment service so they can get all order details required for making a payment
+    public PaymentOrderResponse getResponseForPaymentService(UUID orderId) {
+
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(()->new OrderNotFoundException(orderId));
+
+        List<ProductDetails> productDetails =orderProductMapService.getAllProductsByOrderId(order.getOrderId());
+        List<String> productIds =new ArrayList<>();
+
+        for(ProductDetails prod:productDetails){
+            productIds.add(prod.getProductId());
+        }
+
+        return new PaymentOrderResponse(orderId,productIds,order.getTotalCost());
+
+
+    }
 }

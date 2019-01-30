@@ -26,7 +26,6 @@ public class OrderProductMapService {
 
         List<ProductDetails> allProducts = new ArrayList<>();
 
-
         for (OrderProductMap orderProduct : allOrderProducts) {
 
             ProductDetails productDetails = new ProductDetails
