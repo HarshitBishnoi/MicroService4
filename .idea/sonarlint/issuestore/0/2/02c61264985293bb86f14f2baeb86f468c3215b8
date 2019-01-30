@@ -1,0 +1,22 @@
+
+Lsquid:S1191"5Use classes from the Java API instead of Sun classes.(Ùï²è
+bsquid:CommentedOutCodeLine("<This block of commented-out lines of code should be removed.(ü¯¡
+bsquid:CommentedOutCodeLine,"<This block of commented-out lines of code should be removed.(ú Ÿ
+O
+squid:S106&"9Replace this use of System.out or System.err by a logger.(ëÿ»
+O
+squid:S106'"9Replace this use of System.out or System.err by a logger.(¬²ð 
+Tsquid:S1481 "8Remove this unused "CATALOG_SERVICE_URL" local variable.(Šâœ“üÿÿÿÿ
+Fsquid:S2201t"/The return value of "orElseThrow" must be used.(·ÍÁì
+Fsquid:S2201~"/The return value of "orElseThrow" must be used.(·ÍÁì
+Gsquid:S2201‡"/The return value of "orElseThrow" must be used.(·ÍÁì
+Gsquid:S2201‘"/The return value of "orElseThrow" must be used.(·ÍÁì
+Dsquid:S1172"-Remove this unused method parameter "cartId".(ñºÂË
+=squid:S11728"&Remove these unused method parameters.(ä…¸Ç
+csquid:S1854 "GRemove this useless assignment to local variable "CATALOG_SERVICE_URL".(Šâœ“üÿÿÿÿ
+nsquid:S00117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Šâœ“üÿÿÿÿ
+nsquid:S00117]"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×½îÿÿÿÿÿ
+nsquid:S00117]"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×½îÿÿÿÿÿ
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¹¼œ€
+Msquid:UselessImportCheck")Remove this unused import 'java.net.URI'.(Ö¦¨°
+]squid:UselessImportCheck"9Remove this unused import 'com.sun.jndi.toolkit.url.Uri'.(Ùï²è
