@@ -1,4 +1,35 @@
 
+<<<<<<< HEAD
+fsquid:S4488#"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ëñº©þÿÿÿÿ
+fsquid:S4488U"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(×ÑŸýÿÿÿÿ
+_squid:S4488s"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(£þÔ 
+dsquid:S4488z"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ý·µØýÿÿÿÿ
+esquid:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(îà»Åúÿÿÿÿ
+esquid:S4488†"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(»úàøÿÿÿÿ
+`squid:S4488‹"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ª‘°
+msquid:S2159,"VRemove this call to "equals"; comparisons between unrelated types always return false.(þŠ„ý
+gsquid:CommentedOutCodeLineA"<This block of commented-out lines of code should be removed.(ýÆÏãøÿÿÿÿ
+gsquid:CommentedOutCodeLinea"<This block of commented-out lines of code should be removed.( ÞÓüÿÿÿÿ
+bsquid:CommentedOutCodeLinee"<This block of commented-out lines of code should be removed.(œ˜Í€
+T
+squid:S1069"9Replace this use of System.out or System.err by a logger.(Øá¹©øÿÿÿÿ
+O
+squid:S106`"9Replace this use of System.out or System.err by a logger.(¦Œøô
+^squid:S00112'"FDefine and throw a dedicated exception instead of using a generic one.(çûÃŸ
+^squid:S00112*"FDefine and throw a dedicated exception instead of using a generic one.(ÖéŽÃ
+csquid:S00112-"FDefine and throw a dedicated exception instead of using a generic one.(óòÿÎûÿÿÿÿ
+csquid:S001122"FDefine and throw a dedicated exception instead of using a generic one.(‹‚áÇùÿÿÿÿ
+^squid:S00112D"FDefine and throw a dedicated exception instead of using a generic one.(ó‘÷
+]squid:S00112F"FDefine and throw a dedicated exception instead of using a generic one.(­‹ç/
+^squid:S00112H"FDefine and throw a dedicated exception instead of using a generic one.(‹‹¼¦
+^squid:S00112$"FDefine and throw a dedicated exception instead of using a generic one.(Ý˜»Õ
+nsquid:S001176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙËÞÁýÿÿÿÿ
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(àâç
+jsquid:UselessImportCheck"ARemove this unused import 'org.springframework.http.HttpHeaders'.(ãŸñ×úÿÿÿÿ
+hsquid:UselessImportCheck"?Remove this unused import 'org.springframework.http.MediaType'.(úŸÝ¯þÿÿÿÿ
+dsquid:UselessImportCheck"@Remove this unused import 'org.springframework.http.HttpEntity'.(ÂéŽÓ
+Usquid:S1155&">Use isEmpty() to check whether the collection is empty or not.(¤…³”
+=======
 esquid:S4488‘"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(»úàøÿÿÿÿ
 msquid:S2159("VRemove this call to "equals"; comparisons between unrelated types always return false.(þŠ„ý
 esquid:S4488Œ"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(îà»Åúÿÿÿÿ
@@ -25,3 +56,4 @@ rsquid:S00120"ZRename this package name to match the regular expression '^[a
 csquid:S00112)"FDefine and throw a dedicated exception instead of using a generic one.(óòÿÎûÿÿÿÿ
 fsquid:S4488"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ëñº©þÿÿÿÿ
 nsquid:S00117:"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙËÞÁýÿÿÿÿ
+>>>>>>> eebc1e8d75adc4c90de44275498d9aa3cdcbce14
